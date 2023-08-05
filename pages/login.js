@@ -50,4 +50,6 @@ const LoginPage = () => {
   );
 };
 
+LoginPage.withLoginLayout = true;
+
 export default LoginPage;
