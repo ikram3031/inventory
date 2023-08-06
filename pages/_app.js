@@ -2,7 +2,7 @@ import '@/styles/globals.scss';
 import Router from 'next/router';
 import { Fragment } from 'react';
 import SideBar from '@/components/sections/sideBar';
-import NavBar from '@/components/sections/navBar';
+import NavBar from '@/components/sections/NavBar/navBar';
 
 function App({ Component, pageProps }) {
   const LayOut = Component.withLoginLayout ? withLoginLayout :  withOutLoginLayout;
@@ -26,13 +26,12 @@ function withLoginLayout({ children }) {
 
 function withOutLoginLayout({ children }) {
   return (
-    <section className="layOut">
-        <SideBar />
-        <section>
-            <NavBar />
-
-            {children}
-        </section>
-    </section>
+    <>
+      <NavBar />
+      <section className="layOut">
+          <SideBar />
+          {children}
+      </section>
+    </>
   )
 }
