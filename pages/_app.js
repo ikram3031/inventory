@@ -1,7 +1,7 @@
 import '@/styles/globals.scss';
 import Router from 'next/router';
 import { Fragment } from 'react';
-import SideBar from '@/components/sections/sideBar';
+import SideBar from '@/components/sections/SideBar/sideBar';
 import NavBar from '@/components/sections/NavBar/navBar';
 
 function App({ Component, pageProps }) {
