@@ -35,8 +35,13 @@ const SideBar = () => {
         
       </button> 
 
-      {/* Navigation */}
-      <SideBarTab />
+      <div className="sidebar_nav">
+        {/* Navigation */}
+        <SideBarTab 
+          title="Factory"
+          iconUrl='/static/Factory.png'
+        />
+      </div>
     </div>
   )
 }

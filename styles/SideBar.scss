@@ -4,6 +4,7 @@
     background-color: #F4F1F1;
     height: calc(100vh - 60px);
     width: 40px;
+    padding: 0 0.5rem ;
 
     button{
         display: flex;
@@ -14,12 +15,27 @@
             width: 1.5rem;
             display: flex;
             cursor: pointer;
-            margin: 5px;
+            // margin: 5px;
         }
+    }
+
+    .sidebar_nav{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        // align-items: center;
+        margin: 1rem auto;
     }
 }
 
 .sideBarOpen{
     transition: width 0.5s ease;
     width: 258px;
+}
+
+.sideBarTab{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }

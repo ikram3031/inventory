@@ -18,11 +18,11 @@ export default function Home() {
         {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
       <main className='main'>
-        <PageInfoCard
+        {/* <PageInfoCard
           imgUrl={'/static/increase 1.png'}
           value={8000}
           title="Total Sales"
-        />
+        /> */}
       </main>
     </>
   )

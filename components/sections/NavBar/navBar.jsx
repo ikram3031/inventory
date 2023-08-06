@@ -1,10 +1,12 @@
-
+import Link from "next/link";
 
 const NavBar = () => {
   return (
     <nav className="nav">
       <div className="nav_container">
-        <img src="/static/Logo.png" className="logo" alt="Logo" />
+        <Link href='/'>
+          <img src="/static/Logo.png" className="logo" alt="Logo" />
+        </Link>
         <div className="nav_right">
           <div  className="nav_search">
             <img src="/static/search.svg" width="19px" height="19px"/>

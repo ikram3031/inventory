@@ -1,10 +1,14 @@
-import React from 'react'
+import Link from "next/link";
 
 const SideBarTab = (props) => {
     const { iconUrl, title , subMenuItems } = props;
-    
+
     return (
-        <div>SideBarTab</div>
+        <Link href={`/${title.toLowerCase()}`} className="sideBarTab">
+            <img src={iconUrl}/>
+
+            <h3>{title}</h3>
+        </Link>
     )
 }
 
