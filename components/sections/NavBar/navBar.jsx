@@ -16,10 +16,10 @@ const NavBar = () => {
               className="nav_search_input"
             />
           </div>
-          <div className="nav_logOut">
+          <button className="nav_logOut">
             <img src='/static/logout .png'/>
             Logout
-          </div>
+          </button>
           <div className="nav_userInfo">
             <img src="/static/profile.png" alt="" />
             <div className="flex-col">

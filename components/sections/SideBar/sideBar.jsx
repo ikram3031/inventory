@@ -1,12 +1,14 @@
 import { useState } from "react";
+import {  useDispatch, useSelector } from "react-redux";
 import SideBarTab from "./SideBarTab";
+import { toggleSideBar } from "@/redux/features/sideBarSlice";
 
 const SideBar = () => {
-
-  const [showSideBar, setShowSideBar] = useState(false);
+  const dispatch = useDispatch();
+  const showSideBar = useSelector((store) => store.sideBar.isSideBarOpen)
 
   const handleSideBar = () => {
-    setShowSideBar(!showSideBar)
+    dispatch(toggleSideBar());
   }
 
   return (

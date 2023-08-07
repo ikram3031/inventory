@@ -3,14 +3,18 @@ import Router from 'next/router';
 import { Fragment } from 'react';
 import SideBar from '@/components/sections/SideBar/sideBar';
 import NavBar from '@/components/sections/NavBar/navBar';
+import { store } from '@/redux/store';
+import { Provider } from 'react-redux';
 
 function App({ Component, pageProps }) {
   const LayOut = Component.withLoginLayout ? withLoginLayout :  withOutLoginLayout;
 
   return (
-    <LayOut>
-      <Component {...pageProps} />
-    </LayOut>
+    <Provider store={store}>
+      <LayOut>
+        <Component {...pageProps} />
+      </LayOut>
+    </Provider>
   )
 }
 
