@@ -46,9 +46,14 @@ button{
   border: none;
 }
 
+// global classname
 .container{
   max-width: 1240px;
   margin: 0 auto;
+}
+
+.mt-40{
+  margin-top: 40px;
 }
 
 .flex-col{

@@ -1,7 +1,8 @@
 import { useState } from "react";
-import {  useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import SideBarTab from "./SideBarTab";
 import { toggleSideBar } from "@/redux/features/sideBarSlice";
+import { Menu } from "@/lib/constants";
 
 const SideBar = () => {
   const dispatch = useDispatch();
@@ -12,40 +13,43 @@ const SideBar = () => {
   }
 
   return (
-    <div 
-    className={`sideBar ${showSideBar ? "sideBarOpen" : ""}`}
-    > 
-      <button
-        onClick={handleSideBar}
-      >
-        {/* Arrow */}
-        {
-          showSideBar ? (
-            <img 
-              src="/static/left_arrow.svg"                
-              alt="side bar arrow" 
-              className="sideBar_arrow"
-            />
-          ) : (
-            <img 
-              src="/static/arrow.svg"
-              alt="side bar arrow" 
-              className="sideBar_arrow"
-            />
-          )
-        }
-        
+    <div className={`sideBar ${showSideBar ? "sideBarOpen" : ""}`}>
+      {
+        showSideBar && (
+          <div className="dashBoard">
+            <img src="/static/dashboard.png" alt="" />
+            <h4>DASHBOARD</h4>
+          </div>
+        )
+      }
+      <button onClick={handleSideBar}>
+        {showSideBar ? (
+          <img 
+            src="/static/left_arrow.svg"                
+            alt="side bar arrow" 
+            className="sideBar_arrow "
+          />
+        ) : (
+          <img 
+            src="/static/arrow.svg"
+            alt="side bar arrow" 
+            className="sideBar_arrow mt-40"
+          />
+        )}
       </button> 
 
       <div className="sidebar_nav">
         {/* Navigation */}
-        <SideBarTab 
-          title="Factory"
-          iconUrl='/static/Factory.png'
-        />
+        {Menu.map((item) => (
+          <SideBarTab 
+            key={item.title}
+            title={item.title}
+            iconUrl={item.imgUrl}
+          />
+        ))}
       </div>
     </div>
   )
 }
 
-export default SideBar
+export default SideBar;
