@@ -31,21 +31,40 @@ const LoginPage = () => {
   };
 
   return (
-    <div>
-      <h1>Login Page</h1>
-      <input
-        type="text"
-        placeholder="Username"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <button onClick={handleLogin}>Login</button>
+    <div className='login'>
+      <nav>
+        <img src='/static/login_logo.png' alt='logo' />
+      </nav>
+      <section>
+        <div className='login_left'> 
+          <img src='/static/login_banner.png' alt='logo' />
+        </div>
+        <div className='login_right'>
+          <div className='login_form'>
+            <h1>Welcome to Saudia Furniture</h1>
+            <span>Login to Continue</span>
+            <form>
+              <input
+                type="text"
+                placeholder="Username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+              />
+              <input
+                type="password"
+                placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <div className='login_bottom'>
+                <p>Remember me</p>
+                <p>Forget Password</p>
+              </div>
+              <button onClick={handleLogin}>Login</button>
+            </form>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };

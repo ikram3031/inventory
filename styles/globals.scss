@@ -1,6 +1,7 @@
 @import './_variables';
 @import './NavBar.scss';
 @import './SideBar.scss';
+@import './login.scss';
 
 * {
   box-sizing: border-box;
@@ -21,6 +22,11 @@ body{
 a {
   color: inherit;
   text-decoration: none;
+}
+
+h1{
+  font-size: 28px;
+  font-weight: 600;
 }
 
 h2{
