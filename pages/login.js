@@ -4,6 +4,11 @@ import { signIn } from 'next-auth/react';
 const LoginPage = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [isChecked, setIsChecked] = useState(false);
+
+  const handleCheckboxChange = () => {
+    setIsChecked(!isChecked);
+  };
 
   const handleLogin = async () => {
     try {
@@ -44,20 +49,30 @@ const LoginPage = () => {
             <h1>Welcome to Saudia Furniture</h1>
             <span>Login to Continue</span>
             <form>
-              <input
-                type="text"
-                placeholder="Username"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-              />
-              <input
-                type="password"
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-              <div className='login_bottom'>
-                <p>Remember me</p>
+              <div className='input'>
+                <img src='/static/Message.png' alt='icon'/>
+                <input
+                  type="text"
+                  placeholder="Username"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                />
+              </div>
+              <div className='input'>
+                <img src='/static/Password.png' alt='icon'/>
+                <input
+                  type="password"
+                  placeholder="Password"
+                  class="password-input"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+              </div>
+              <div class="login_bottom">
+                <label class="form-control">
+                  <input type="checkbox" name="checkbox" />
+                  <p>Remember me</p>
+                </label>             
                 <p>Forget Password</p>
               </div>
               <button onClick={handleLogin}>Login</button>

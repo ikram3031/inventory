@@ -52,6 +52,68 @@ button{
   border: none;
 }
 
+input[type="text"], input[type="password"]{
+  font-size: 1rem;
+  background-color: white;
+  border: none;
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+  outline: none;
+}
+
+// checkbox
+
+input[type="checkbox"] {
+  /* Add if not using autoprefixer */
+  -webkit-appearance: none;
+  /* Remove most all native input styles */
+  appearance: none;
+  /* For iOS < 15 */
+  background-color: white;
+  /* Not removed via appearance */
+  margin: 0;
+
+  font: inherit;
+  color: #099D3A;
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid #099D3A;
+  transform: translateY(-0.075em);
+  display: grid;
+  place-content: center;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  width:0.7rem;
+  height: 0.7rem;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  transform: scale(0);
+  transform-origin: bottom left;
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1rem 1rem #099D3A;
+  /* Windows High Contrast Mode */
+  background-color: CanvasText;
+}
+
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+input[type="text"]:-webkit-autofill,
+input[type="text"]:-webkit-autofill:hover,
+input[type="text"]:-webkit-autofill:focus,
+input[type="text"]:-webkit-autofill:active,
+input[type="password"]:-webkit-autofill,
+input[type="password"]:-webkit-autofill:hover,
+input[type="password"]:-webkit-autofill:focus,
+input[type="password"]:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset;
+  background-color: white;
+}
+
+
 // global classname
 .container{
   max-width: 1240px;

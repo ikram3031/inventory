@@ -1,6 +1,6 @@
 .login{
     max-width: 1280px;
-    margin: 2rem auto;
+    margin: 1rem auto;
     max-height: 100vh;
 
     span{
@@ -12,7 +12,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin: 3rem auto 0 auto;
+        margin: 1rem auto;
         max-width: 90%;
 
         .login_left{
@@ -26,7 +26,7 @@
 
         .login_right{
             width: 40%;
-            margin: 1rem auto;
+            margin: 0 auto;
             display: flex;
             flex-direction: column;
             // align-items: center;
@@ -35,30 +35,82 @@
             .login_form{
                 margin: 1rem;
                 padding: 2rem;
-                border-radius: 0.5rem;
+                border-radius: 1.5rem;
                 background-color: white;
-                filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+                box-shadow: 10px 20px 60px 0px rgba(0, 0, 0, 0.13);
 
                 form{
                     margin: 3rem 0;
                     display: flex;
                     flex-direction: column;
-                    gap: 0.5rem;
+                    gap: 1rem;
                     align-items: center;
+                    max-width: 476px;
 
-                    input{
-                        width: 350px;
-                        padding: 1rem;
-                        font-size: 1rem;
-                        margin-bottom: 0.5rem;
+                    .input{
+                        display: flex;
+                        align-items: center;
+                        // gap: 1rem;
+                        justify-content: flex-start;
                         border-radius: 35px;
                         border: 1px solid #099D3A;
+                        width: 350px;
+                        height: 48px;
+                        padding: 0.5rem 1rem;
+
+                        img{
+                            height: 1.5rem;
+                            width: 1.5rem;
+                        }
+
+                        input{      
+                            width: 85%;              
+                            font-size: 1rem;
+                            margin-bottom: 0.5rem;
+                            margin: auto;
+                            height: 100%;
+                        }
                     }
 
                     .login_bottom{
                         display: flex;
                         align-items: center;
                         justify-content: space-between;
+                        width: 80%;
+
+                        label{
+                            font-size: 1rem;
+                            color: #099D3A;
+                            display: flex;
+                            align-items: center;
+                            justify-content: flex-start ;
+                            gap: 0.5rem;
+
+                            p{
+                                margin-bottom: 2px;
+                            }
+                        }                         
+                                         
+
+                        p{
+                            font-size: 1rem;
+                            color:#099D3A;
+                            cursor: pointer;
+                        }
+                    }
+
+                    button{
+                        display: flex;
+                        width: 319px;
+                        height: 3rem;
+                        margin-top: 2rem;
+                        padding: 20px 73px;
+                        justify-content: center;
+                        align-items: center;
+                        border-radius: 25px;
+                        background: #099D3A;
+                        color: white;
+                        font-size: 1rem;
                     }
                 }
             }
