@@ -14,14 +14,6 @@ const SideBar = () => {
 
   return (
     <div className={`sideBar ${showSideBar ? "sideBarOpen" : ""}`}>
-      {
-        showSideBar && (
-          <div className="dashBoard">
-            <img src="/static/dashboard.png" alt="" />
-            <h4>DASHBOARD</h4>
-          </div>
-        )
-      }
       <button onClick={handleSideBar}>
         {showSideBar ? (
           <img 
@@ -33,10 +25,19 @@ const SideBar = () => {
           <img 
             src="/static/arrow.svg"
             alt="side bar arrow" 
-            className="sideBar_arrow mt-40"
+            className="sideBar_arrow mb-50"
           />
         )}
       </button> 
+      
+      {
+        showSideBar && (
+          <div className="dashBoard">
+            <img src="/static/dashboard.png" alt="" />
+            <h4>DASHBOARD</h4>
+          </div>
+        )
+      }
 
       <div className="sidebar_nav">
         {/* Navigation */}

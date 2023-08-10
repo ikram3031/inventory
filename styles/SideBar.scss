@@ -6,6 +6,19 @@
     width: 40px;
     padding: 0 0.5rem ;
 
+    button{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        .sideBar_arrow{
+            width: 1.5rem;
+            display: flex;
+            cursor: pointer;
+            // margin: 5px;
+        }
+    }
+
     .dashBoard{
         background-color: #099D3A;
         display: flex;
@@ -28,24 +41,11 @@
         }
     }
 
-    button{
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-
-        .sideBar_arrow{
-            width: 1.5rem;
-            display: flex;
-            cursor: pointer;
-            // margin: 5px;
-        }
-    }
-
     .sidebar_nav{
         display: flex;
         flex-direction: column;
         gap: 1rem;
-        // align-items: center;
+        width: 198px;
         margin: 1rem auto;
     }
 }
@@ -54,6 +54,8 @@
     width: 258px;
 }
 
+
+// sidebar tab
 .sideBarTab{
     width: 100%;
     display: flex;
