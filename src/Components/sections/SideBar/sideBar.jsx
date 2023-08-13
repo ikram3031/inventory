@@ -1,8 +1,13 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import SideBarTab from "./SideBarTab";
-import { toggleSideBar } from "@/redux/features/sideBarSlice";
-import { Menu } from "@/lib/constants";
+import { toggleSideBar } from "../../../redux/features/sideBarSlice";
+import { Menu } from "../../../lib/menu";
+import './sideBar.scss';
+import LeftArrow from '../../../assets/static/left_arrow.svg';
+import Arrow from '../../../assets/static/arrow.svg';
+import DashBoard from '../../../assets/static/dashboard.png';
+
 
 const SideBar = () => {
   const dispatch = useDispatch();
@@ -17,13 +22,13 @@ const SideBar = () => {
       <button onClick={handleSideBar}>
         {showSideBar ? (
           <img 
-            src="/static/left_arrow.svg"                
+            src={LeftArrow}                
             alt="side bar arrow" 
             className="sideBar_arrow "
           />
         ) : (
           <img 
-            src="/static/arrow.svg"
+            src={Arrow}
             alt="side bar arrow" 
             className="sideBar_arrow mb-50"
           />
@@ -33,7 +38,7 @@ const SideBar = () => {
       {
         showSideBar && (
           <div className="dashBoard">
-            <img src="/static/dashboard.png" alt="" />
+            <img src={DashBoard} alt="" />
             <h4>DASHBOARD</h4>
           </div>
         )

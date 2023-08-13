@@ -1,15 +1,19 @@
-import Link from "next/link";
+import { Link } from "react-router-dom";
+import Logo from '../../../assets/static/Logo.png';
+import Search from '../../../assets/static/search.svg';
+import LogOut from '../../../assets/static/logout .png';
+import './navBar.scss';
 
 const NavBar = () => {
   return (
     <nav className="nav">
       <div className="nav_container">
         <Link href='/'>
-          <img src="/static/Logo.png" className="logo" alt="Logo" />
+          <img src={Logo} className="logo" alt="Logo" />
         </Link>
         <div className="nav_right">
           <div  className="nav_search">
-            <img src="/static/search.svg" width="19px" height="19px"/>
+            <img src={Search} width="19px" height="19px"/>
             <input
               type="text"
               placeholder="Search..."
@@ -17,7 +21,7 @@ const NavBar = () => {
             />
           </div>
           <button className="nav_logOut">
-            <img src='/static/logout .png'/>
+            <img src={LogOut}/>
             Logout
           </button>
           <div className="nav_userInfo">

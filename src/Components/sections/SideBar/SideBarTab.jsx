@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const SideBarTab = (props) => {
@@ -7,7 +7,7 @@ const SideBarTab = (props) => {
     const isSideBarOpen = useSelector((store) => store.sideBar.isSideBarOpen)
 
     return (
-        <Link href={`/${title.toLowerCase()}`} className="sideBarTab">
+        <Link to={`/${title.toLowerCase()}`} className="sideBarTab">
             <img src={iconUrl}/>
             {
                 isSideBarOpen ? <h3>{title}</h3> : (
