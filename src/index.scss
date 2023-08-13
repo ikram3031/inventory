@@ -65,13 +65,9 @@ input[type="text"]:focus, input[type="password"]:focus {
 // checkbox
 
 input[type="checkbox"] {
-  /* Add if not using autoprefixer */
   -webkit-appearance: none;
-  /* Remove most all native input styles */
   appearance: none;
-  /* For iOS < 15 */
   background-color: white;
-  /* Not removed via appearance */
   margin: 0;
 
   font: inherit;
