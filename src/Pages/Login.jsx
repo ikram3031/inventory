@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { signIn } from 'next-auth/react';
+import './Login.scss'
 
 const LoginPage = () => {
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isChecked, setIsChecked] = useState(false);
 
@@ -10,30 +11,49 @@ const LoginPage = () => {
     setIsChecked(!isChecked);
   };
 
-  const handleLogin = async () => {
+  /* const handleLogin = async (e) => {
+    e.preventDefault();
     try {
-      // Make an API request to check if the user exists
-      const response = await fetch('your_external_api_url', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ username, password }),
+      const response = await axios.post('http://140.99.142.211:8080/sign-in', {
+        email: email,
+        password: password,
       });
-
-      const data = await response.json();
-
-      if (response.ok) {
-        // User exists in the external API, proceed with authentication
-        signIn('credentials', { username, password });
+  
+      if (response.status === 200) {
+        const { access_token } = response.data;
+        Cookies.set('access_token', access_token);
+        // User authentication succeeded, you can proceed with signIn
+        console.log('Successful')
+        // signIn('credentials', { email, password });
       } else {
-        // Handle incorrect credentials or other error responses
-        console.error('Login failed:', data.error);
+        // Handle incorrect credentials or other error responses from your API
+        console.error('Login failed:', response.data.error);
       }
     } catch (error) {
       console.error('Error while logging in:', error);
     }
+  }; */
+  
+  const handleLogin = async (e) => {
+    e.preventDefault();
+
+    const result = await signIn('credentials', {
+      email,
+      password,
+      callbackUrl: '/', 
+      redirect: false, 
+    });
+
+    console.log(result)
+
+    // if (!result.error) {
+    //   // Redirect to the homepage
+    //   window.location.href = '/';
+    // } else {
+    //   console.error('Login failed:', result.error);
+    // }
   };
+
 
   return (
     <div className='login'>
@@ -53,9 +73,9 @@ const LoginPage = () => {
                 <img src='/static/Message.png' alt='icon'/>
                 <input
                   type="text"
-                  placeholder="Username"
-                  value={username}
-                  onChange={(e) => setUsername(e.target.value)}
+                  placeholder="Email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
               <div className='input'>
