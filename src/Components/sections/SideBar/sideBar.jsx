@@ -19,6 +19,7 @@ const SideBar = () => {
 
   return (
     <div className={`sideBar ${showSideBar ? "sideBarOpen" : ""}`}>
+      {/* Button */}
       <button onClick={handleSideBar}>
         {showSideBar ? (
           <img 
@@ -35,6 +36,7 @@ const SideBar = () => {
         )}
       </button> 
       
+      {/* Dashboard Text */}
       {
         showSideBar && (
           <div className="dashBoard">
@@ -51,6 +53,7 @@ const SideBar = () => {
             key={item.title}
             title={item.title}
             iconUrl={item.imgUrl}
+            subMenu={item.submenu}
           />
         ))}
       </div>

@@ -6,6 +6,8 @@ import Home from './Pages/Home/Home';
 import Login from './Pages/Login/Login';
 import Products from './Pages/Products/Products';
 import AddProduct from './Pages/Products/Add Product/AddProducts';
+import AllProducts from './Pages/Products/All Products/AllProducts';
+import Categories from './Pages/Products/Categories/Categories';
 import Layout from './Components/Layout';
 
 function App() {
@@ -22,6 +24,8 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/products' element={<Products />} />
           <Route path='/products/add-product' element={<AddProduct />} />
+          <Route path='/products/all-products' element={<AllProducts />} />
+          <Route path='/products/categories' element={<Categories />} />
         </Route>
       </Routes>
     </>

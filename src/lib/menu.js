@@ -8,9 +8,19 @@ export const Menu = [
       "imgUrl": `${img1}`,
       "submenu": [
         {
+          "title": "All",
+          "url": "/products/all-products",
+          "value": "all"
+        },
+        {
           "title": "Add New",
-          "url": "/products/add-new",
+          "url": "/products/add-product",
           "value": "add new"
+        },
+        {
+          "title": "Categories",
+          "url": "/products/categories",
+          "value": "Categories"
         }
       ]
     }
