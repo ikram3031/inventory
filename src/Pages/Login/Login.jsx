@@ -1,5 +1,10 @@
 import { useState } from 'react';
-import './Login.scss'
+import './Login.scss';
+import Banner from '../../assets/static/login_banner.png';
+import Message from '../../assets/static/Message.png';
+import Password from '../../assets/static/Password.png';
+import axios from 'axios';
+
 
 const LoginPage = () => {
   const [email, setEmail] = useState('');
@@ -10,7 +15,7 @@ const LoginPage = () => {
     setIsChecked(!isChecked);
   };
 
-  /* const handleLogin = async (e) => {
+ /*  const handleLogin = async (e) => {
     e.preventDefault();
     try {
       const response = await axios.post('http://140.99.142.211:8080/sign-in', {
@@ -32,36 +37,15 @@ const LoginPage = () => {
       console.error('Error while logging in:', error);
     }
   }; */
-  
-  const handleLogin = async (e) => {
-    e.preventDefault();
-
-    const result = await signIn('credentials', {
-      email,
-      password,
-      callbackUrl: '/', 
-      redirect: false, 
-    });
-
-    console.log(result)
-
-    // if (!result.error) {
-    //   // Redirect to the homepage
-    //   window.location.href = '/';
-    // } else {
-    //   console.error('Login failed:', result.error);
-    // }
-  };
-
 
   return (
     <div className='login'>
       <nav>
-        <img src='/static/login_logo.png' alt='logo' />
+        {/* <img src='/static/login_logo.png' alt='logo' /> */}
       </nav>
       <section>
         <div className='login_left'> 
-          <img src='/static/login_banner.png' alt='logo' />
+          <img src={Banner} alt='Banner' />
         </div>
         <div className='login_right'>
           <div className='login_form'>
@@ -69,7 +53,7 @@ const LoginPage = () => {
             <span>Login to Continue</span>
             <form>
               <div className='input'>
-                <img src='/static/Message.png' alt='icon'/>
+                <img src={Message} alt='icon'/>
                 <input
                   type="text"
                   placeholder="Email"
@@ -78,23 +62,23 @@ const LoginPage = () => {
                 />
               </div>
               <div className='input'>
-                <img src='/static/Password.png' alt='icon'/>
+                <img src={Password} alt='icon'/>
                 <input
                   type="password"
                   placeholder="Password"
-                  class="password-input"
+                  className="password-input"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
-              <div class="login_bottom">
-                <label class="form-control">
+              <div className="login_bottom">
+                <label className="form-control">
                   <input type="checkbox" name="checkbox" />
                   <p>Remember me</p>
                 </label>             
                 <p>Forget Password</p>
               </div>
-              <button onClick={handleLogin}>Login</button>
+              <button >Login</button>
             </form>
           </div>
         </div>
